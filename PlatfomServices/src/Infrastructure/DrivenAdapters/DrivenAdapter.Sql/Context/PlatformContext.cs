@@ -1,4 +1,5 @@
 ﻿using Domain.Model.Models;
+using DrivenAdapter.Sql.Configurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace DrivenAdapter.Sql.Context
@@ -9,6 +10,11 @@ namespace DrivenAdapter.Sql.Context
 
         public PlatformContext(DbContextOptions options) : base(options)
         {
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new PlatformConfigure());
         }
     }
 }

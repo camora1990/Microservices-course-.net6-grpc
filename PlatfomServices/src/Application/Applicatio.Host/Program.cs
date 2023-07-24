@@ -12,7 +12,7 @@ builder.Services.AddSwaggerGen();
 
 #region Services
 
-builder.Services.AddCommonsServices();
+builder.Services.AddMapperServices();
 builder.Services.AddDatabaseServices(builder.Configuration.GetConnectionString("PlatformServices"));
 
 #endregion Services

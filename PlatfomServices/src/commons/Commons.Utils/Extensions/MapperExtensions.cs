@@ -4,7 +4,7 @@ namespace Commons.Utils.MapperExtensions
 {
     public static class MapperExtensions
     {
-        public static IServiceCollection AddCommonsServices(this IServiceCollection services)
+        public static IServiceCollection AddMapperServices(this IServiceCollection services)
         {
             return services;
         }
