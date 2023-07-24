@@ -13,6 +13,7 @@ namespace DrivenAdapter.Sql.Configurations
             builder.Property(x => x.Name).IsRequired().HasMaxLength(150);
             builder.Property(x => x.Cost).IsRequired();
             builder.Property(x => x.Publisher).IsRequired();
+            builder.Property(x => x.CreateAt).HasDefaultValue(DateTime.UtcNow);
         }
     }
 }
