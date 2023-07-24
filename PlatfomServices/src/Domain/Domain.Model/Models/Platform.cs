@@ -1,8 +1,7 @@
 ﻿namespace Domain.Model.Models
 {
-    public class Platform
+    public class Platform : BaseModel
     {
-        public long Id { get; set; }
         public string Name { get; set; }
         public string Publisher { get; set; }
         public string Cost { get; set; }
