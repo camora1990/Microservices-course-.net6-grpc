@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Domain.Model.Models;
 using Domain.UseCase.Interfaces;
 using EntryPoint.Web.Dtos;
 using Microsoft.AspNetCore.Mvc;
@@ -21,4 +22,17 @@ public class PlatformController : BaseController
         => await HandleRequest(async () =>
              _mapper.Map<IEnumerable<PlatformDto>>(await _useCase.GetAll())
        , "List platform");
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetById([FromRoute] long id)
+        => await HandleRequest(async () =>
+        _mapper.Map<PlatformDto>(await _useCase.GetById(id)), "Platform");
+
+    [HttpPost]
+    public async Task<IActionResult> Create([FromBody] CreatePlatformDto dto)
+        => await HandleRequest(async () =>
+        {
+            var resp = await _useCase.Create(_mapper.Map<Platform>(dto));
+            return _mapper.Map<PlatformDto>(resp);
+        }, "");
 }

@@ -9,6 +9,7 @@ namespace Commons.Utils.Mapper
         public MapperConfig()
         {
             CreateMap<Platform, CreatePlatformDto>().ReverseMap();
+            CreateMap<Platform, PlatformDto>().ReverseMap();
         }
     }
 }
