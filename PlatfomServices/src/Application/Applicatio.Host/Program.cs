@@ -1,5 +1,6 @@
 using Commons.Utils.MapperExtensions;
 using DrivenAdapter.Sql.SqlExtensions;
+using Domain.UseCase.UseCaseExtensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddMapperServices();
 builder.Services.AddDatabaseServices(builder.Configuration.GetConnectionString("PlatformServices"));
+builder.Services.AddServicesUseCase();
+builder.Services.AddRepositoriesServices();
 
 #endregion Services
 
