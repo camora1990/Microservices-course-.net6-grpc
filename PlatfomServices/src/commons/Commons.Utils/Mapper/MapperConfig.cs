@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Domain.Model.Models;
+using EntryPoint.Web.Dtos;
 
 namespace Commons.Utils.Mapper
 {
@@ -6,6 +8,7 @@ namespace Commons.Utils.Mapper
     {
         public MapperConfig()
         {
+            CreateMap<Platform, CreatePlatformDto>().ReverseMap();
         }
     }
 }

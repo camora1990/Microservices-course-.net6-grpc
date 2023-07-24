@@ -10,4 +10,9 @@
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\Domain.Model\Domain.Model.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\EntryPoints\EntryPoint.Web\EntryPoint.Web.csproj" />
+  </ItemGroup>
+
 </Project>
